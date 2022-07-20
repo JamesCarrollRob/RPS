@@ -1,8 +1,8 @@
  const selections = ["rock", "paper", "scissors"];
  var computerChoice = getComputerChoice();
- let playerSelection = prompt("Choose paper, rock or scissors. ");
-let computerVictory = console.log(computerChoice + " beats " + playerSelection + " ! I win! ");
-let playerVictory = console.log(playerSelection + " beats " + computerChoice + "! You win!");
+ var playerSelection = prompt("Choose paper, rock or scissors. ");
+// var computerVictory = console.log(computerChoice + " beats " + playerSelection + " ! I win! ");
+// var playerVictory = console.log(playerSelection + " beats " + computerChoice + "! You win!");
  
 //  var computerVictory = alert(computerChoice + " beats " + playerSelection + " ! I win! ");
 //  var playerVictory = alert(playerSelection + " beats " + computerChoice + "! You win!");
@@ -14,31 +14,28 @@ function getComputerChoice(){
     //    console.log(computerChoice[i]);
     //  }
     return selections[Math.floor(Math.random()*selections.length)];
-    console.log(computerChoice);
+   
 
  }
-
-//  console.log(playerSelection);
+ console.log(computerChoice);
+ console.log(playerSelection);
 
 function playRound()
 
 {
-    
+//     var computerVictory = console.log(computerChoice + " beats " + playerSelection + " ! I win! ");
+// var playerVictory = console.log(playerSelection + " beats " + computerChoice + "! You win!");
     
 
-  if(playerSelection == computerChoice){
-    console.log("Sorry! There has been a mistake. Please try again.")
+  if(playerSelection === computerChoice){
+    console.log("Tie! No winner!");
 }
-  else if(playerSelection == "rock" && computerChoice == "paper") {
-    computerVictory;
-} else if (playerSelection == "paper" && computerChoice == "scissors"){
-    computerVictory;
-} else if(playerSelection == "scissors" && computerChoice == "rock"){
-    computerVictory;
+  else if(playerSelection === "rock" && computerChoice === "paper" || playerSelection === "paper" && computerChoice === "scissors" || playerSelection === "scissors" && computerChoice === "rock") {
+   console.log("computer Victory");
 } else {
-    playerVictory;
+    console.log ("playerVictory");
 }
 
 }
 
-playRound();
+ playRound();
