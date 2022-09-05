@@ -1,4 +1,5 @@
  const selections = ["rock", "paper", "scissors"];
+ const playBtn = document.querySelector("#play-round");
  var computerChoice = getComputerChoice();
  var playerScore = 0;
  var computerScore = 0;
@@ -38,6 +39,8 @@ function playRound()
   
  }
  
+playBtn.addEventListener('click', () => {
+  while(roundsPlayed < 5){playRound();}
+})
 
-while(roundsPlayed < 5){playRound();}
  
