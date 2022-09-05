@@ -1,6 +1,7 @@
  const selections = ["rock", "paper", "scissors"];
  var computerChoice = getComputerChoice();
- 
+ var playerScore = 0;
+ var computerScore = 0;
  var roundsPlayed = 0;
 
 function getComputerChoice(){
@@ -21,14 +22,19 @@ function playRound()
     console.log("Tie! No winner!");
 }
   else if(playerSelection === "rock" && computerChoice === "paper" || playerSelection === "paper" && computerChoice === "scissors" || playerSelection === "scissors" && computerChoice === "rock") {
-   console.log("computer Victory");
+    computerScore += 1;
+    
+    console.log("computer Victory");
 } else {
+    playerScore += 1;
     console.log ("playerVictory");
 }
 
  roundsPlayed += 1;
  console.log(playerSelection);
  console.log(roundsPlayed);
+ console.log( "Computer: " + computerScore);
+ console.log( "Player: " + playerScore);
   
  }
  
