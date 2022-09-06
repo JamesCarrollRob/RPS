@@ -1,9 +1,8 @@
  const selections = ["rock", "paper", "scissors"];
- const playBtn = document.querySelector("#play-round");
-//  const rockBtn = document.querySelector("#rock");
-//  const paperBtn = document.querySelector("#paper");
-//  const scissorsBtn = document.querySelector("#scissors");
  const choiceBtns = document.querySelectorAll("#choiceBtn");
+ const playerScoreDisplay = document.getElementById('player-score');
+ const computerScoreDisplay = document.getElementById('computer-score');
+ const roundDisplay = document.getElementById('round');
  var playerScore = 0;
  var computerScore = 0;
  var roundsPlayed = 0;
@@ -30,13 +29,7 @@ function getComputerChoice(){
 function playRound()
 
 {
-  // var playerSelection = prompt("Choose paper, rock or scissors. ");
-  // var playerSelection = ""
-  // choiceBtns.forEach(button=>button.addEventListener("click", ()=> {
-  //         playerSelection = button.textContent;
-  //         computerChoice = getComputerChoice();
-  //    }))
-  // var computerChoice = getComputerChoice();
+  
 
   if(playerSelection === computerChoice){
     console.log("Tie! No winner!");
@@ -51,33 +44,15 @@ function playRound()
     console.log ("playerVictory");
 }
 
-//  roundsPlayed += 1;
-//  getComputerChoice();
  console.log(playerSelection);
  console.log(computerChoice);
  console.log(roundsPlayed);
  console.log( "Computer: " + computerScore);
  console.log( "Player: " + playerScore);
+
+ playerScoreDisplay.innerText = "Player: " + playerScore;
+ computerScoreDisplay.innerText = "Computer: " + computerScore;
+ roundDisplay.innerText = "Round: " + roundsPlayed;
   
  }
- 
-playBtn.addEventListener('click', () => {
-  playRound();
-  // while(roundsPlayed < 5){
-   
-  //   playRound();}
-})
-
-
-// rockBtn.addEventListener('click', () => {
-//   playerSelection = "rock";
-// })
-
-// paperBtn.addEventListener('click', () => {
-//   playerSelection = "paper";
-// })
-
-// scissorsBtn.addEventListener('click', () => {
-//   playerSelection = "scissors";
-// })
  
