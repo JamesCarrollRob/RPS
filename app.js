@@ -3,9 +3,11 @@
  const playerScoreDisplay = document.getElementById('player-score');
  const computerScoreDisplay = document.getElementById('computer-score');
  const roundDisplay = document.getElementById('round');
+ const tieDisplay = document.getElementById('tie');
  var playerScore = 0;
  var computerScore = 0;
  var roundsPlayed = 0;
+ var tie = 0;
  var playerSelection;
  var computerChoice;
 
@@ -32,6 +34,7 @@ function playRound()
   
 
   if(playerSelection === computerChoice){
+    tie += 1;
     console.log("Tie! No winner!");
 }
   else if(playerSelection === "rock" && computerChoice === "paper" || playerSelection === "paper" && computerChoice === "scissors" || playerSelection === "scissors" && computerChoice === "rock") {
@@ -53,6 +56,7 @@ function playRound()
  playerScoreDisplay.innerText = "Player: " + playerScore;
  computerScoreDisplay.innerText = "Computer: " + computerScore;
  roundDisplay.innerText = "Round: " + roundsPlayed;
+ tieDisplay.innerText = "Tie: " + tie;
   
  }
  
